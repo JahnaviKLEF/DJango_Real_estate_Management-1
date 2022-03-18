@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]-->      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+body {
+background-color:  powderblue;
+
+}
+h3   {color: blue; font-size: 1.875em;}
+h3 {text-align: center;}
+h4    {color: red;}
+
+form {
+  border: 3px solid #f1f1f1;
+  background-color: darkblue;
+}
+
+input[type=text], input[type=password], input[type=email] {
+  padding:0 40px;
+    width:40%;
+    height:55px;
+    border: 1px solid #dadada;
+    color: grey;
+    text-align:justify;
+    outline: none;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight:normal;
+    font-family: 'Muli', sans-serif;
+    border-radius:30px;
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
+    -o-border-radius:30px;
+    -ms-border-radius:30px;
+
+}
+
+
+
+
+
+input[type=file] {
+    padding:0 40px;
+    width:40%;
+    height:55px;
+    border: 1px solid #dadada;
+    color: grey;
+    text-align:justify;
+    outline: none;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight:normal;
+    font-family: 'Muli', sans-serif;
+    border-radius:30px;
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
+    -o-border-radius:30px;
+    -ms-border-radius:30px;
+}
+input[type=file] {
+    background-color:#f5f8fa !important;
+    border:1px solid #dadada;
+}
+
+.register {
+    background-color: lightgreen;
+    width: 52%;
+    height: 55px;
+    border: none;
+    margin-left: 233px;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -o-border-radius: 30px;
+    -ms-border-radius: 30px;
+    font-family: 'Muli', sans-serif;
+}
+.register:hover {
+    background-color:#36b051;
+    color:#fff;
+}
+
+
+label.header {
+    font-size: 16px;
+    font-weight: 500;
+    width: 215px;
+    color: grey;
+    margin-right:10px;
+    text-align:justify;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+}
+
+.signup-w3ls {
+    width: 50%;
+    margin: 70px 25% 80%;
+    padding: 0;
+    display: table;
+    position: relative;
+}
+
+.signup-agile1{
+    width:100%;
+    float:center;
+}
+
+.signup-w3ls .signup-agile1 .form-control {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .header, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+
+ </style>
+
+
+    </head>
+    <body>
+       <h3>Signup</h3>
+       {% for message in messages %}
+       <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+       <strong></strong>  {{ message }}
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+       </button>
+       </div>
+       {% endfor %}
+       <div class="signup-w3ls">
+         <div class="signup-agile1">
+       <form action="/signup" method="post" calss="box">
+           {% csrf_token %}
+            
+            <div>
+           <label class="header">Username</label>
+           <input type="text" id="username" name="username" placeholder="Create a username " required/>
+                <br>
+                </div>
+            <div>
+            <label class="header">First name</label>
+           <input type="text" id="fname" name="fname" placeholder="Enter your First name" required>
+   <br>
+           </div>
+           <div>
+           <label class="header">Middle name</label>
+           <input type="text" id="mname" name="mname" placeholder="Enter your middle name" >
+   <br>
+           </div>
+           <div>
+           <label class="header">Last name</label>
+           <input type="text" id="lname" name="lname" placeholder="Enter your Last name" required>
+   <br>
+           </div>
+           <div>
+           <label class="header">Email-ID</label>
+           <input type="email" id="email" name="email" placeholder="Enter your Email-Id" required>
+   <br>
+           </div>
+           <label class="header">Password</label>
+
+           <input type="password" id="pass1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="pass1" placeholder="Enter your password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+   <br>
+           <div>
+           <label class="header">Conform password</label>
+            <input type="password" id="pass2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="pass2" placeholder="conform your password" title="Must contain at least one number and one uppercase and lowercase letter and at least 8 or more characters" required>
+
+       <br>
+           </div>
+           <div>
+               <label class="header"></label>
+          <input type="submit" class="register" value="Register">
+           </div>
+
+       </form>
+       </div>
+       </div>
+
+        <script src="" async defer></script>
+    </body>
+</html>

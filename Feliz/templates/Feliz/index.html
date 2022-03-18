@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]-->      <html class="no-js">
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Feliz Property Management</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+
+ </head>
+   <body id="bg" style="background-image: url('{% static "img/backgroundhome.jpg" %}');">
+       {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong></strong>  {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        {% endfor %}
+
+       {% if user.is_authenticated %}
+     
+        <div class="topnav">
+          <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                You have successfully logged in
+          </div>
+      <ul>
+            
+
+        
+     
+                <div>
+                  
+                  <a href="/contact">Contact</a>
+                  <a href="/signout">SignOut</a>
+                  <a href="/Apartment">Buynow</a>
+                  <a href="/Profile">Profile</a>
+                  <a href="/edit_profile">EditProfile</a>
+                </div>
+                  </ul>
+            <h3>Feliz Property Management</h3>
+            <h3>Welcome {{ fname }}</h3>
+
+        </div>
+
+
+
+        {% else %}
+
+<div id = "header" >
+
+        <div class="topnav">
+<ul>
+       <li><a href="/signup">Signup</a></li>
+       <li><a href="/signin">Signin</a></li>
+       <a href="/about">About us</a>
+       <li><a href="/home" >Feliz Property Management</a></li>
+
+</ul>
+            <h3>Feliz Property Management</h3>
+
+      {% endif %}
+        </div>
+</div>
+    
+
+    <script src="" async defer></script>
+
+
+
+    </body>
+</html>

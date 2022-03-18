@@ -1,0 +1,52 @@
+h3   {
+  color: black; font-size: 1.875em;
+}
+h3 {text-align: center;}
+h4    {color: red;}
+
+#forms{
+  height: auto;
+  position: inherit;
+  max-width: 1000px;
+  margin: auto;
+}
+
+input[type=text], input[type=password], input[type=email] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box ;
+  border-radius: 5px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: width 0.4s ease-in-out;
+  outline: none;
+  text-align: center;
+
+}
+
+
+button {
+  background-color: #9e2000ab;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  text-align: center;
+}
+
+button:hover {
+  opacity: 0.8;
+  background-color: dark yellow;
+}
+
+#bg{
+  background-repeat: no-repeat;
+  background-size: 1800px 900px;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+
+
